@@ -2,6 +2,29 @@
 
 **Domain 1:** Agentic Architecture & Orchestration (27%) · **Concepts:** `stop_reason`, `tool_use` / `tool_result`, multi-tool selection, safety iteration caps
 
+## Learning objectives
+
+From the curriculum, after this lesson you should be able to explain:
+
+- How the agentic loop lifecycle works with the Messages API
+- Why `stop_reason` is the authoritative signal for loop control
+- How to handle the `tool_use` and `end_turn` stop reasons correctly
+- How to append tool results to conversation history for multi-turn execution
+- When safety iteration caps are appropriate versus inappropriate as stopping mechanisms
+
+## Problem statement
+
+The exercise asks for an agent built in six steps. Each one maps to a specific part of the code.
+
+| # | Requirement | Why it matters | What you should see | Where in the code |
+|---|---|---|---|---|
+| 1 | Set up a Claude API client with two tools: a **calculator** (accepts `expression`, returns result) and a **web search stub** (accepts `query`, returns mock results). | Multi-tool setups expose model-driven decision-making — Claude must pick the right tool from context, which is core to agentic architecture. | Two tool definitions with proper JSON Schema `input_schema`, each with `name`, `description`, and parameters. | `Tool`, `ToolRegistry`, `TOOLS` |
+| 2 | Implement the agentic loop that sends requests to Claude and **inspects `stop_reason`** after each response. | The exam tests whether you use `stop_reason` (deterministic) versus content-type checks or natural-language parsing (unreliable). | A `while` loop that calls `client.messages.create()` and checks `response.stop_reason` each iteration. | `Agent.run()` |
+| 3 | Handle `tool_use`: execute the requested tool, create a tool result message, append it to history. | The critical step — the exam checks that you extract tool calls, execute them, and return results in the right message format. | On a tool request, the code extracts the `tool_use` block, runs the matching function, and appends both the assistant response and a user message containing `tool_result`. | `tool_use` branch in `Agent.run()` |
+| 4 | Handle `end_turn`: extract and return the final response. | `end_turn` is Claude's signal that the task is complete; extracting the text correctly ends the loop. | When `stop_reason` is `end_turn`, the loop exits and returns the text content. | `end_turn` branch in `Agent.run()` |
+| 5 | Test with a prompt that needs **multiple sequential tool calls** (search for a value, then calculate with it) and verify the loop continues through all iterations. | Sequential calls test the full lifecycle: complete one tool call, receive the result, reason about it, decide to call another, then return. | At least two tool-call iterations before `end_turn`: search first, use the result in a calculation, return the combined answer. | `DEFAULT_PROMPT` in `main()` |
+| 6 | Add a **safety iteration cap of 20** as a maximum bound (not the primary stopping mechanism) and log a warning if it triggers. | The exam distinguishes safety caps (acceptable fallback) from caps as the primary stop (anti-pattern). The cap should never trigger in normal operation. | A `MAX_ITERATIONS` constant, a counter incremented each loop, and a warning log if the cap is hit. | `MAX_ITERATIONS`, top of `Agent.run()` |
+
 ## What this builds
 
 A minimal but production-shaped agent: Claude is given two tools (a calculator and a stubbed web

@@ -111,11 +111,13 @@ code without looking at any other lesson.
 
 Every lesson README has the same sections, so they're skimmable the night before the exam:
 
-1. **What this builds** — the exercise and what you should see when it runs
-2. **How to run**
-3. **Code walkthrough** — step by step, each section's *what* and *why*
-4. **Key takeaways** — the 5–7 points the lesson exists to teach
-5. **Exam traps** — a table of anti-patterns and why each fails
+1. **Learning objectives** — what the curriculum says you should be able to explain afterwards
+2. **Problem statement** — the exercise's numbered requirements as given, each with *why it matters*, *what you should see*, and *where in the code* it's satisfied
+3. **What this builds** — the resulting project and its output when run
+4. **How to run**
+5. **Code walkthrough** — step by step, each section's *what* and *why*
+6. **Key takeaways** — the 5–7 points the lesson exists to teach
+7. **Exam traps** — a table of anti-patterns and why each fails
 
 ## Setup
 
