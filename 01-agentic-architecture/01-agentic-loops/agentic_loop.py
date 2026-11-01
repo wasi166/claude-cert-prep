@@ -21,15 +21,15 @@ from dataclasses import dataclass, field
 from typing import Any, Callable
 
 import anthropic
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from anthropic.types import Message, MessageParam, TextBlock, ToolParam, ToolUseBlock
 
 # =============================================================================
 # Configuration
 # =============================================================================
 
-# Load ANTHROPIC_API_KEY from the nearest .env (repo root), if present.
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env"))
+# Load ANTHROPIC_API_KEY from the nearest .env walking up from this file (repo root).
+load_dotenv(find_dotenv())
 
 MODEL = "claude-sonnet-4-5"
 MAX_TOKENS = 2048

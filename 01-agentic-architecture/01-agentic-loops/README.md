@@ -1,6 +1,6 @@
-# 01 — The Agentic Loop
+# 1.1 — Agentic Loops
 
-**Module:** Agentic architecture · **Concepts:** `stop_reason`, `tool_use` / `tool_result`, multi-tool selection, safety iteration caps
+**Domain 1:** Agentic Architecture & Orchestration (27%) · **Concepts:** `stop_reason`, `tool_use` / `tool_result`, multi-tool selection, safety iteration caps
 
 ## What this builds
 
@@ -20,7 +20,7 @@ ASSISTANT: Three Eiffel Towers stacked would be 990 meters tall.
 
 ```bash
 # from repo root, with ANTHROPIC_API_KEY in .env
-cd 01-agentic-loop
+cd 01-agentic-architecture/01-agentic-loops
 python agentic_loop.py
 python agentic_loop.py "What is 2+2?"       # no tools needed -> end_turn on iteration 1
 pytest -q                                   # offline tests, no key required
