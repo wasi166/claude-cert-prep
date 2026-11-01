@@ -92,9 +92,10 @@ claude-cert-prep/
 │
 ├── 01-agentic-architecture/     ← one folder per exam domain
 │   ├── 01-agentic-loops/        ← one folder per lesson
-│   │   ├── README.md            ← what it builds · how to run · walkthrough · takeaways · exam traps
-│   │   ├── agentic_loop.py      ← the project, runnable against the real API
-│   │   └── test_agentic_loop.py ← offline tests (tool layer, error paths, loop invariants)
+│   │   ├── README.md            ← objectives · problem statement · walkthrough · takeaways · exam traps
+│   │   ├── agentic_loop.py      ← THE LESSON: short, heavily commented, real API client
+│   │   ├── test_agentic_loop.py ← offline tests for the lesson's core ideas
+│   │   └── hardened_version.py  ← optional: same idea with production concerns added
 │   ├── 02-multi-agent-orchestration/
 │   └── ...
 ├── 02-tool-design-mcp/
@@ -146,7 +147,8 @@ pytest -q
 
 ## Conventions
 
-- Real API client in every lesson — no mocks in the main code path. Tests mock only what they must.
-- Tool inputs are untrusted: no `eval()`, no shelling out on model-supplied strings.
-- Errors inside tools go back to the model as `tool_result` with `is_error: true`; only genuine bugs raise.
+- **The lesson file teaches one thing.** It's as short as the concept allows, comments explain *why*,
+  and nothing is in it that the exam doesn't test. Production concerns (retries, safe eval, structured
+  errors, exit codes) live in an optional `hardened_version.py` when they're worth showing.
+- Real API client in every lesson — no mocks in the main code path. Tests mock only the client.
 - Every behaviour-governing constant lives at the top of the file with a comment on *why*.
