@@ -44,7 +44,7 @@ The exam is split into 5 domains and 30 lessons. Weightings are the share of exa
 - [x] 1.1 [Agentic Loops](01-agentic-architecture/01-agentic-loops/) — `stop_reason` control flow, `tool_use`/`tool_result`, safety caps
 - [x] 1.2 [Multi-Agent Orchestration](01-agentic-architecture/02-multi-agent-orchestration/) — hub-and-spoke coordinator, subagent isolation, broad decomposition, refinement loop
 - [x] 1.3 [Subagent Invocation and Context Passing](01-agentic-architecture/03-subagent-context-passing/) — Agent SDK subagents, `allowed_tools=["Agent"]`, structured metadata, parallel spawning
-- [ ] 1.4 Workflow Enforcement and Handoff
+- [x] 1.4 [Workflow Enforcement and Handoff](01-agentic-architecture/04-workflow-enforcement-handoff/) — prerequisite gate in code, session state, structured handoff protocol, multi-concern decomposition
 - [ ] 1.5 Agent SDK Hooks
 - [ ] 1.6 Task Decomposition Strategies
 - [ ] 1.7 Session State and Resumption
