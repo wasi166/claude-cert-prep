@@ -3,3 +3,4 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+01-agentic-architecture/06-task-decomposition/results/

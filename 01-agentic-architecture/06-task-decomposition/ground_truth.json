@@ -1,0 +1,151 @@
+{
+  "local": {
+    "db.ts": [],
+    "users.service.ts": [
+      {
+        "line": 3,
+        "pattern": "LOOSE_EQ"
+      },
+      {
+        "line": 8,
+        "pattern": "FOREACH_ASYNC"
+      }
+    ],
+    "orders.service.ts": [
+      {
+        "line": 4,
+        "pattern": "SQL_CONCAT"
+      },
+      {
+        "line": 9,
+        "pattern": "FOREACH_ASYNC"
+      }
+    ],
+    "payments.service.ts": [
+      {
+        "line": 3,
+        "pattern": "LOOSE_EQ"
+      },
+      {
+        "line": 4,
+        "pattern": "UNHANDLED_PROMISE"
+      }
+    ],
+    "inventory.service.ts": [
+      {
+        "line": 3,
+        "pattern": "FOREACH_ASYNC"
+      }
+    ],
+    "shipping.service.ts": [
+      {
+        "line": 3,
+        "pattern": "LOOSE_EQ"
+      },
+      {
+        "line": 4,
+        "pattern": "SQL_CONCAT"
+      }
+    ],
+    "notifications.service.ts": [
+      {
+        "line": 3,
+        "pattern": "UNHANDLED_PROMISE"
+      }
+    ],
+    "auth.service.ts": [
+      {
+        "line": 2,
+        "pattern": "HARDCODED_SECRET"
+      },
+      {
+        "line": 4,
+        "pattern": "LOOSE_EQ"
+      }
+    ],
+    "reports.service.ts": [
+      {
+        "line": 6,
+        "pattern": "SQL_CONCAT"
+      },
+      {
+        "line": 10,
+        "pattern": "FOREACH_ASYNC"
+      }
+    ],
+    "search.service.ts": [
+      {
+        "line": 3,
+        "pattern": "UNHANDLED_PROMISE"
+      }
+    ],
+    "cache.service.ts": [
+      {
+        "line": 3,
+        "pattern": "LOOSE_EQ"
+      },
+      {
+        "line": 4,
+        "pattern": "FOREACH_ASYNC"
+      }
+    ],
+    "audit.service.ts": [
+      {
+        "line": 5,
+        "pattern": "SQL_CONCAT"
+      },
+      {
+        "line": 9,
+        "pattern": "FOREACH_ASYNC"
+      }
+    ],
+    "export.service.ts": [
+      {
+        "line": 3,
+        "pattern": "LOOSE_EQ"
+      },
+      {
+        "line": 4,
+        "pattern": "UNHANDLED_PROMISE"
+      }
+    ],
+    "analytics.service.ts": [
+      {
+        "line": 6,
+        "pattern": "FOREACH_ASYNC"
+      }
+    ],
+    "webhooks.service.ts": [
+      {
+        "line": 2,
+        "pattern": "HARDCODED_SECRET"
+      },
+      {
+        "line": 4,
+        "pattern": "UNHANDLED_PROMISE"
+      }
+    ]
+  },
+  "cross_file": [
+    {
+      "pattern": "API_MISMATCH",
+      "file": "orders.service.ts",
+      "detail": "getUser() takes a string id; orders.service passes an object"
+    },
+    {
+      "pattern": "API_MISMATCH",
+      "file": "audit.service.ts",
+      "detail": "getUser() takes one argument; audit.service passes two"
+    },
+    {
+      "pattern": "FIELD_MISMATCH",
+      "file": "reports.service.ts",
+      "detail": "getUser() returns userId; reports.service reads user.user_id"
+    },
+    {
+      "pattern": "FIELD_MISMATCH",
+      "file": "analytics.service.ts",
+      "detail": "getUser() returns userId; analytics.service reads user.id"
+    }
+  ]
+}
