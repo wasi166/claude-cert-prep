@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 .pytest_cache/
 01-agentic-architecture/06-task-decomposition/results/
+01-agentic-architecture/07-session-state-resumption/workspace/
+01-agentic-architecture/07-session-state-resumption/summary.json
