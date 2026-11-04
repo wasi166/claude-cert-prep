@@ -33,7 +33,7 @@ The exam is split into 5 domains and 30 lessons. Weightings are the share of exa
 | # | Domain | Weight | Lessons | Folder |
 |---|--------|-------:|--------:|--------|
 | 1 | Agentic Architecture & Orchestration | 27% | 7 | [`01-agentic-architecture/`](01-agentic-architecture/) |
-| 2 | Tool Design & MCP Integration | 18% | 5 | `02-tool-design-mcp/` |
+| 2 | Tool Design & MCP Integration | 18% | 5 | [`02-tool-design-mcp/`](02-tool-design-mcp/) |
 | 3 | Claude Code Configuration & Workflows | 20% | 6 | `03-claude-code-config/` |
 | 4 | Prompt Engineering & Structured Output | 20% | 6 | `04-prompt-engineering/` |
 | 5 | Context Management & Reliability | 15% | 6 | `05-context-reliability/` |
@@ -50,7 +50,7 @@ The exam is split into 5 domains and 30 lessons. Weightings are the share of exa
 - [x] 1.7 [Session State and Resumption](01-agentic-architecture/07-session-state-resumption/) — resume vs fork vs fresh+summary, stale context, targeted re-analysis
 
 ### Domain 2 — Tool Design & MCP Integration (18%)
-- [ ] 2.1 Tool Interface Design
+- [x] 2.1 [Tool Interface Design](02-tool-design-mcp/01-tool-interface-design/) — descriptions as the router, five elements, misrouting measurement, system-prompt conflicts
 - [ ] 2.2 Structured Error Responses
 - [ ] 2.3 Tool Distribution & Tool Choice
 - [ ] 2.4 MCP Server Integration
