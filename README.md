@@ -51,7 +51,7 @@ The exam is split into 5 domains and 30 lessons. Weightings are the share of exa
 
 ### Domain 2 — Tool Design & MCP Integration (18%)
 - [x] 2.1 [Tool Interface Design](02-tool-design-mcp/01-tool-interface-design/) — descriptions as the router, five elements, misrouting measurement, system-prompt conflicts
-- [ ] 2.2 Structured Error Responses
+- [x] 2.2 [Structured Error Responses](02-tool-design-mcp/02-structured-error-responses/) — isError, errorCategory/isRetryable/description, valid-empty vs failure, category→action recovery
 - [ ] 2.3 Tool Distribution & Tool Choice
 - [ ] 2.4 MCP Server Integration
 - [ ] 2.5 Built-in Tools
